@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function About() {
   return (
-    <section className="section section__about">
+    <section id="about" className="section section__about">
       <h1 className="section__title">Our Story</h1>
       <div className="section__content">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit beatae

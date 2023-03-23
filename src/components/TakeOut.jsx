@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function TakeOut() {
   return (
-    <section className="section section__takeout">
+    <section id="takeout" className="section section__takeout">
       <h1 className="section__title">Takeout</h1>
       <div className="section__content">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit beatae

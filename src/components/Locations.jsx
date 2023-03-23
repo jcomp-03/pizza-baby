@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function Locations() {
   return (
-    <section className="section section__hours">
+    <section id="locations" className="section section__hours">
       <h1 className="section__title">Hours & Locations </h1>
       <div className="section__content">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit beatae

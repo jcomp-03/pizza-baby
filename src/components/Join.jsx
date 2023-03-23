@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function Join() {
   return (
-    <section className="section section__join">
+    <section id="join" className="section section__join">
       <h1 className="section__title">Join Us</h1>
       <div className="section__content">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit beatae

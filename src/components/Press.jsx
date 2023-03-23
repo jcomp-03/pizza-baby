@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 function Press() {
   return (
-    <section className="section section__press">
-      <h1 className="section__title">The Menu</h1>
+    <section id="press" className="section section__press">
+      <h1 className="section__title">Press</h1>
       <div className="section__content">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit beatae
         veritatis molestias hic aut, sequi accusamus et dolorem officiis

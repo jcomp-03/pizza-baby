@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Header from "./components/Header";
 import Jumbotron from "./components/Jumbotron";
 import About from "./components/About";
 import Menu from "./components/Menu";
@@ -12,13 +13,14 @@ import Press from "./components/Press";
 function App() {
   return (
     <div className="App">
+      <Header />
       <Jumbotron />
       <About />
       <Menu />
       <Locations />
-      <Join />
       <Reservations />
       <TakeOut />
+      <Join />
       <Press />
     </div>
   );

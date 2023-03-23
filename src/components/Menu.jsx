@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function Menu() {
   return (
-    <section className="section section__menu">
+    <section id="menu" className="section section__menu">
       <h1 className="section__title">The Menu</h1>
       <div className="section__content">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit beatae

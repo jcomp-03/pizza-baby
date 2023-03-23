@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function Reservations() {
   return (
-    <section className="section section__reservations">
+    <section id="reservations" className="section section__reservations">
       <h1 className="section__title">Make Reservations</h1>
       <div className="section__content">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit beatae

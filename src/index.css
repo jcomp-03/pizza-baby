@@ -1,5 +1,7 @@
 :root {
   --titleColor: white;
+  --shadow1: #fff;
+  --shadow2: rgb(171, 11, 11);
 }
 
 /* CSS reset */
@@ -11,9 +13,41 @@
 
 body {
   min-height: 100vh;
-  background-image: url('./assets/images/menu-bg-5.jpg');
+  background-image: url('./assets/images/body-bg-2.jpg');
   background-size: 100vw 100%;
   background-attachment: fixed;
+}
+
+.socials-hamburger-container {
+  display: flex;
+}
+
+.span-social-media {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.span-social-media a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.font-awesome {
+  padding: 0 0.3em;
+}
+
+.navbar-expand-md a[class="navbar-brand"] {
+  margin-left: 1rem;
+}
+
+.nav__link {
+  padding-left: 1rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.dropdown .dropdown-menu[data-bs-popper="static"] {
+  left: -30%;
 }
 
 .jumbotron {
@@ -26,6 +60,28 @@ body {
   width: 75%;
   height: auto;
   margin: 0 auto;
+  border: solid 2px red;
+}
+
+.jumbotron__motto {
+  border: solid 2px black;
+  width: 75%;
+  margin: 5rem auto 0;
+  text-align: center;
+  font-size: 4rem;
+  font-family: "Mansalva", cursive;
+  font-weight: bold;
+  color: #000;
+  animation-name: pulsate;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px red,
+    0 0 82px rgb(92, 26, 26), 0 0 92px red, 0 0 102px red, 0 0 151px red;
+}
+
+.motto--tablet {
+  display: none;
+  font-size: 2.5rem;
 }
 
 .section {
@@ -44,7 +100,23 @@ body {
 }
 
 
+@keyframes pulsate {
+  100% {
+    /* Larger blur radius */
+    text-shadow: 0 0 4px var(--shadow1), 0 0 11px var(--shadow1), 0 0 19px var(--shadow1), 0 0 40px var(--shadow2),
+      0 0 80px var(--shadow2), 0 0 90px var(--shadow2), 0 0 100px var(--shadow2), 0 0 150px var(--shadow2);
+  }
+  0% {
+    /* Smaller blur radius */
+    text-shadow: 0 0 2px var(--shadow1), 0 0 4px var(--shadow1), 0 0 6px var(--shadow1), 0 0 10px var(--shadow2),
+      0 0 45px var(--shadow2), 0 0 55px var(--shadow2), 0 0 70px var(--shadow2), 0 0 80px var(--shadow2);
+  }
+}
 
+/* Pseudo classes, states*/
+.nav__link:hover, .nav__link:focus {
+  background-color: rgb(186, 207, 207);
+}
 
 
 /* Media queries for responsive design */
@@ -53,7 +125,48 @@ body {
     background-size: cover;
   }
 
+  .socials-hamburger-container {
+    display: none
+  }
+
+  .nav__link {
+    font-weight: normal;
+  }
+
+  .navbar-expand-md .navbar-nav .dropdown {
+    padding-right: var(--bs-navbar-nav-link-padding-x);
+    padding-left: var(--bs-navbar-nav-link-padding-x);
+  }
+
+  .nav__link:hover, .nav__link:focus {
+    background-color: inherit;
+  }
+
+  .motto--mobile {
+    display: none;
+  }
+  .motto--tablet {
+    display: block;
+  }
+
   .section__title {
     font-size: 2rem;
   }
+}
+
+@media screen and (min-width: 992px) {
+  .nav__link {
+    font-size: 1rem;
+  }
+  .dropdown .dropdown-menu[data-bs-popper="static"] {
+    left: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .motto--tablet {
+    font-size: 4rem;
+  }
+
+
 }
