@@ -1,7 +1,6 @@
 import React from "react";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
-import pizza from "/favicon_io_pizza/favicon-32x32.png";
-import logo from "/favicon_io_logo_dark_transparent_png/favicon-32x32.png";
+import logo from '../assets/images/favicon_io_logo_dark_transparent_png/favicon-32x32.png';
 // FontAwesome imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,7 +8,7 @@ import {
   faTwitterSquare,
   faFacebookSquare,
 } from "@fortawesome/free-brands-svg-icons";
-import { faPhone, faMapLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Header() {
@@ -26,7 +25,13 @@ function Header() {
       </Navbar.Brand>
       <div className="socials-hamburger-container">
         <span className="span-social-media">
-          <a href="https://www.google.com" target={"_blank"}><FontAwesomeIcon className="font-awesome" icon={faPhone} fixedWidth /></a>
+          <a href="https://www.google.com" target={"_blank"}>
+            <FontAwesomeIcon
+              className="font-awesome"
+              icon={faPhone}
+              fixedWidth
+            />
+          </a>
           <FontAwesomeIcon
             className="font-awesome"
             icon={faFacebookSquare}
@@ -63,14 +68,14 @@ function Header() {
             Takeout
           </Nav.Link>
           <Nav.Link className="nav__link" href="#join">
-            Join Us
+            Join Our Team
           </Nav.Link>
           <Nav.Link className="nav__link" href="#press">
             Press
           </Nav.Link>
           <NavDropdown
             className="nav__link test"
-            title="Affiliated Restaurants"
+            title="A&C Food Group"
             id="nav-dropdown"
           >
             <NavDropdown.Item href="https://flourshopfood.com/" target="_blank">

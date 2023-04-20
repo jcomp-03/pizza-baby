@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import Header from "./components/Header";
 import Jumbotron from "./components/Jumbotron";
 import About from "./components/About";
-import Menu from "./components/Menu";
-import Locations from "./components/Locations";
+// import Menu from "./components/Menu";
+// import Locations from "./components/Locations";
+// import Contact from './components/Contact';
+import MenuLocationsContact from "./components/Menu-Locations-Contact";
 import Join from "./components/Join";
 import Reservations from "./components/Reservations";
 import TakeOut from "./components/TakeOut";
 import Press from "./components/Press";
-
 
 function App() {
   return (
@@ -16,8 +17,10 @@ function App() {
       <Header />
       <Jumbotron />
       <About />
-      <Menu />
-      <Locations />
+      {/* <Menu /> */}
+      {/* <Locations /> */}
+      {/* <Contact /> */}
+      <MenuLocationsContact />
       <Reservations />
       <TakeOut />
       <Join />
