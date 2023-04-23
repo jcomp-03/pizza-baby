@@ -2,29 +2,32 @@ import React, { useState } from "react";
 import Header from "./components/Header";
 import Jumbotron from "./components/Jumbotron";
 import About from "./components/About";
-// import Menu from "./components/Menu";
-// import Locations from "./components/Locations";
-// import Contact from './components/Contact';
-import MenuLocationsContact from "./components/Menu-Locations-Contact";
+import HoursLocationContact from "./components/HoursLocationContact";
+import Menu from "./components/Menu";
 import Join from "./components/Join";
 import Reservations from "./components/Reservations";
 import TakeOut from "./components/TakeOut";
 import Press from "./components/Press";
+import Footer from "./components/Footer";
+import { ViewportProvider } from "./utils/viewportContext";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Jumbotron />
-      <About />
-      {/* <Menu /> */}
-      {/* <Locations /> */}
-      {/* <Contact /> */}
-      <MenuLocationsContact />
-      <Reservations />
-      <TakeOut />
-      <Join />
-      <Press />
+      {/* wrap the components that need access to shared data with a Provider
+      component */}
+      <ViewportProvider>
+        <Header />
+        <Jumbotron />
+        <About />
+        <HoursLocationContact />
+        <Menu />
+        {/* <Reservations /> */}
+        {/* <TakeOut /> */}
+        <Join />
+        <Press />
+        <Footer />
+      </ViewportProvider>
     </div>
   );
 }

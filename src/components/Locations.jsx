@@ -1,23 +1,21 @@
 import React, { useState } from "react";
+import MapBox from "./MapBox";
 
 function Locations() {
   return (
-    <section id="locations" className="section section__hours">
-      <h1 className="section__title">Hours & Locations </h1>
+    <section id="locations" className="section__locations">
+      <h1 className="section__title">Locations</h1>
       <div className="section__content">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit beatae
-        veritatis molestias hic aut, sequi accusamus et dolorem officiis
-        voluptate officia a nulla tempore delectus minus sint enim deserunt in?
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
-        explicabo aliquid fuga, dolores molestiae rerum aliquam nam hic eos
-        numquam sed beatae ratione placeat libero reiciendis praesentium soluta
-        temporibus minus. Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Accusamus earum ad natus quisquam similique quam ea, illo facere
-        explicabo, nam accusantium culpa laudantium quia deserunt ex quasi
-        doloribus amet nisi! Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Commodi atque ipsum repellat incidunt accusamus, sequi ducimus
-        sit! Omnis laudantium hic assumenda quas! Quis velit ut tenetur nihil
-        vel tempora facere.
+        <span>West</span>: 2135 Thrift Rd, Charlotte, NC 28208
+        <br />
+        {` (`}next to the Coterie{`)`}
+        <br />
+        <span>East</span>: 1603 Elizabeth Ave, Charlotte, NC 28204
+        <br />
+        {` (`}next to Customshop{`)`}
+        <div id="mapBox" className="mapBox">
+          <MapBox />
+        </div>
       </div>
     </section>
   );

@@ -2,22 +2,19 @@ import React, { useState } from "react";
 
 function Contact() {
   return (
-    <section id="contact" className="section section__contact">
+    <section id="contact" className="section__contact">
       <h1 className="section__title">Contact</h1>
       <div className="section__content">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit beatae
-        veritatis molestias hic aut, sequi accusamus et dolorem officiis
-        voluptate officia a nulla tempore delectus minus sint enim deserunt in?
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
-        explicabo aliquid fuga, dolores molestiae rerum aliquam nam hic eos
-        numquam sed beatae ratione placeat libero reiciendis praesentium soluta
-        temporibus minus. Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Accusamus earum ad natus quisquam similique quam ea, illo facere
-        explicabo, nam accusantium culpa laudantium quia deserunt ex quasi
-        doloribus amet nisi! Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Commodi atque ipsum repellat incidunt accusamus, sequi ducimus
-        sit! Omnis laudantium hic assumenda quas! Quis velit ut tenetur nihil
-        vel tempora facere.
+        <span className="contact__number">West</span>: {` (`}123{`)`}456-7890
+        <br />
+        <br />
+        <span className="contact__number">East</span>: {` (`}123{`)`}456-7890
+        <br />
+        <br />
+        <span className="contact__email">Email:</span>
+        <span className="contact__email--events">Events:</span> events@pizzababypizza.com
+        <br />
+        <span className="contact__email--other">Other:</span> management@pizzababypizza.com
       </div>
     </section>
   );

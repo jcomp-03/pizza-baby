@@ -1,12 +1,11 @@
 import React from "react";
+import {isMobile, isDesktop } from 'react-device-detect';
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
-import logo from '../assets/images/favicon_io_logo_dark_transparent_png/favicon-32x32.png';
+import logo from "../assets/images/favicon_io_logo_dark_transparent_png/favicon-32x32.png";
 // FontAwesome imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagramSquare,
-  faTwitterSquare,
-  faFacebookSquare,
 } from "@fortawesome/free-brands-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -32,21 +31,13 @@ function Header() {
               fixedWidth
             />
           </a>
-          <FontAwesomeIcon
-            className="font-awesome"
-            icon={faFacebookSquare}
-            fixedWidth
-          />
-          <FontAwesomeIcon
-            className="font-awesome"
-            icon={faInstagramSquare}
-            fixedWidth
-          />
-          <FontAwesomeIcon
-            className="font-awesome"
-            icon={faTwitterSquare}
-            fixedWidth
-          />
+          <a href={isMobile ? "instagram://user?username=jlcomp03" : "https://instagram.com/jlcomp03"} target={"_blank"}>
+            <FontAwesomeIcon
+              className="font-awesome"
+              icon={faInstagramSquare}
+              fixedWidth
+            />
+          </a>
         </span>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       </div>
@@ -61,12 +52,12 @@ function Header() {
           <Nav.Link className="nav__link" href="#locations">
             Hours & Locations
           </Nav.Link>
-          <Nav.Link className="nav__link" href="#reservations">
+          {/* <Nav.Link className="nav__link" href="#reservations">
             Reservations
-          </Nav.Link>
-          <Nav.Link className="nav__link" href="#takeout">
+          </Nav.Link> */}
+          {/* <Nav.Link className="nav__link" href="#takeout">
             Takeout
-          </Nav.Link>
+          </Nav.Link> */}
           <Nav.Link className="nav__link" href="#join">
             Join Our Team
           </Nav.Link>

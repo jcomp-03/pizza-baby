@@ -1,11 +1,12 @@
 :root {
-  --bg1: rgb(0,0,0);
-  --text1: rgb(255,255,255);
+  --bg1: rgb(0, 0, 0);
+  --text1: rgb(255, 255, 255);
   --border1: solid 5px white;
   --border2: solid 2px red;
   --titleColor: white;
   --shadow1: #fff;
   --shadow2: rgb(171, 11, 11);
+  --carouselIcon: #fff;
 }
 
 /* CSS reset */
@@ -31,11 +32,16 @@ body {
 .span-social-media {
   font-size: 1.5rem;
   margin-right: 1rem;
+  color: black;
 }
 
 .span-social-media a {
   text-decoration: none;
   color: inherit;
+}
+
+.span-social-media a svg {
+  /* padding: 0; */
 }
 
 .font-awesome {
@@ -60,6 +66,7 @@ body {
   display: flex;
   flex-direction: column;
   /* border: var(--border2); */
+  margin-top: 1.5rem;
 }
 
 .jumbotron__logo {
@@ -90,24 +97,30 @@ body {
   /* width: 100vw; */
 }
 
+.jumbotron__carousel h3,
+.jumbotron__carousel p {
+  color: white;
+}
+
+.jumbotron__carousel p {
+  color: white;
+  font-size: 1.25rem;
+}
+.jumbotron__carousel__icon {
+  color: var(--carouselIcon);
+}
+
 .motto--tablet {
   display: none;
   font-size: 2.5rem;
 }
 
 .section {
-  border: var(--border1);
+  border-bottom: var(--border1);
   display: flex;
   flex-direction: column;
-  margin: 8rem 2rem 2rem;
-  padding: 1rem;
-}
-
-.section__about {
-    background-image: url('./assets/images/bg2.jpg');
-    /* background-position: center; */
-    background-size: 100%;
-    /* background-attachment: fixed; */
+  margin: 2rem;
+  padding: 0 1rem 3rem;
 }
 
 .section__title {
@@ -118,37 +131,199 @@ body {
   color: var(--titleColor);
 }
 
+.section.section__about {
+  background-image: url("./assets/images/bg2.jpg");
+  background-size: 100%;
+}
+
+.section.section__hours-locations-contact {
+  padding: 0 0 3rem;
+}
+
+.section.section__hours-locations-contact section:not(:last-child) {
+  border-bottom: var(--border1);
+  padding: 0 0 3rem;
+  margin-bottom: 2rem;
+}
+
+.section__hours,
+.section__locations,
+.section__contact {
+  width: 100%;
+}
+
+.section__hours .section__content,
+.section__locations .section__content,
+.section__contact .section__content {
+  font-family: "Glory", sans-serif;
+  text-align: center;
+}
+
+.section__hours p:last-child {
+  margin-bottom: 0;
+}
+
+.section__locations span,
+.section__contact span {
+  font-weight: 900;
+  font-size: 1.25rem;
+}
+
+.mapBox {
+  margin: 0 1rem;
+}
+
+.contact__email {
+  display: block;
+  width: 75%;
+  margin: 0 auto;
+  border-top: solid 2px pink;
+}
+.section__menu .section__content p {
+  font-size: 1.25rem;
+  font-family: "Glory", sans-serif;
+  text-align: center;
+}
+
+.section__menu .section__content a {
+  text-align: center;
+  display: block;
+}
+
+.section__menu .section__content .menu-icon {
+  font-size: 5.5rem;
+  padding: 0;
+  color: yellow;
+}
+
+.handshake {
+  display: flex;
+  flex-direction: column;
+}
+
+.handshake .handshake-icon {
+  font-size: 8rem;
+}
+
 .form {
   margin-top: 1rem;
 }
 
 .form__text {
-  color: rgb(238, 93, 254)
+  color: rgb(238, 93, 254);
+}
+
+.form__button {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  height: auto;
+  color: black;
+}
+
+.footer__div--img {
+  height: 20vh;
+}
+
+.footer__div--img img {
+  width: auto;
+  display: inline;
+  height: 100%;
+}
+
+.footer__div--text {
+  padding: 0 .25rem;
+  text-align: center;
+}
+
+.footer__div--text span a {
+  text-decoration: none;
+  color: black;
+}
+.footer__div--text span:first-child a {
+  font-family: "Montserrat Subrayada", sans-serif;
+}
+
+.footer__div--text span:nth-child(3) {
+  font-family: 'Glory', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.footer__div--text span:nth-child(3) .font-awesome {
+  color: red;
+}
+
+.footer__div--socials {
+  font-size: 1.5rem;
+  font-family: 'Glory', sans-serif;
+}
+
+.footer__div--socials span a {
+  color: inherit;
 }
 
 @keyframes pulsate {
   100% {
     /* Larger blur radius */
-    text-shadow: 0 0 4px var(--shadow1), 0 0 11px var(--shadow1), 0 0 19px var(--shadow1), 0 0 40px var(--shadow2),
-      0 0 80px var(--shadow2), 0 0 90px var(--shadow2), 0 0 100px var(--shadow2), 0 0 150px var(--shadow2);
+    text-shadow: 0 0 4px var(--shadow1), 0 0 11px var(--shadow1),
+      0 0 19px var(--shadow1), 0 0 40px var(--shadow2), 0 0 80px var(--shadow2),
+      0 0 90px var(--shadow2), 0 0 100px var(--shadow2),
+      0 0 150px var(--shadow2);
   }
   0% {
     /* Smaller blur radius */
-    text-shadow: 0 0 2px var(--shadow1), 0 0 4px var(--shadow1), 0 0 6px var(--shadow1), 0 0 10px var(--shadow2),
-      0 0 45px var(--shadow2), 0 0 55px var(--shadow2), 0 0 70px var(--shadow2), 0 0 80px var(--shadow2);
+    text-shadow: 0 0 2px var(--shadow1), 0 0 4px var(--shadow1),
+      0 0 6px var(--shadow1), 0 0 10px var(--shadow2), 0 0 45px var(--shadow2),
+      0 0 55px var(--shadow2), 0 0 70px var(--shadow2), 0 0 80px var(--shadow2);
   }
 }
 
 /* Pseudo classes, states*/
-.nav__link:hover, .nav__link:focus {
+.nav__link:hover,
+.nav__link:focus {
   background-color: rgb(186, 207, 207);
 }
-
 
 /* Media queries for responsive design */
 @media screen and (min-width: 576px) {
   .jumbotron__logo {
     width: 75%;
+  }
+
+  .section__hours .section__content,
+  .section__locations .section__content,
+  .section__contact .section__content {
+    font-size: 1.5rem;
+  }
+
+  .section__locations span,
+  .section__contact span {
+    font-size: 1.55rem;
+  }
+
+  .section__menu .section__content p {
+    font-size: 3rem;
+  }
+
+  .section__menu .section__content .menu-icon {
+    font-size: 12rem;
+  }
+
+  .footer {
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 1.25rem;
+  }
+
+  .footer__div--text, .footer__div--socials {
+    margin: auto 0;
   }
 }
 
@@ -158,20 +333,21 @@ body {
   }
 
   .socials-hamburger-container {
-    display: none
+    min-width: 20vw;
+    order: 1;
+    justify-content: end;
   }
 
   .nav__link {
     font-weight: normal;
   }
 
+  .mr-auto.navbar-nav {
+    flex-wrap: wrap;
+  }
   .navbar-expand-md .navbar-nav .dropdown {
     padding-right: var(--bs-navbar-nav-link-padding-x);
     padding-left: var(--bs-navbar-nav-link-padding-x);
-  }
-
-  .nav__link:hover, .nav__link:focus {
-    background-color: inherit;
   }
 
   .jumbotron__logo {
@@ -184,6 +360,7 @@ body {
   .motto--mobile {
     display: none;
   }
+
   .motto--tablet {
     display: block;
   }
@@ -193,7 +370,7 @@ body {
   }
 
   .section__join {
-    padding: 0 25vw;
+    padding: 0 10vw 3rem;
   }
 }
 
@@ -201,8 +378,50 @@ body {
   .nav__link {
     font-size: 1rem;
   }
+
+  .nav__link.nav-item.dropdown {
+    padding: 0;
+  }
+
   .dropdown .dropdown-menu[data-bs-popper="static"] {
     left: 0;
+  }
+
+  .section.section__hours-locations-contact {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .section.section__hours-locations-contact section:not(:last-child) {
+    margin-bottom: 0;
+    border-right: var(--border1);
+    border-bottom: none;
+  }
+
+  .handshake {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .handshake .handshake-icon {
+    font-size: 13rem;
+  }
+
+  .handshake .form {
+    order: -1;
+    flex-grow: 0.5;
+  }
+
+  .form__button {
+    width: 50%;
+    display: block;
+    margin: 1rem auto 0;
+  }
+
+  .footer {
+    flex-direction: row;
+    align-items: stretch;
   }
 }
 
@@ -211,5 +430,7 @@ body {
     font-size: 4rem;
   }
 
-
+  .handshake .handshake-icon {
+    font-size: 17rem;
+  }
 }
