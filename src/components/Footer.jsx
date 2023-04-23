@@ -3,12 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagramSquare } from "@fortawesome/free-brands-svg-icons";
 import { faMapPin } from "@fortawesome/free-solid-svg-icons";
 import { isMobile, isDesktop } from "react-device-detect";
+import logo from "../assets/images/pizza-baby-logo-round.png";
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer__div--img">
-        <img src="/src/assets/images/pizza-baby-logo-round.png" />
+        <img src={logo} />
       </div>
 
       <div className="footer__div--text">
