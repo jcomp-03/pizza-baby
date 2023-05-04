@@ -93,7 +93,7 @@ body {
 }
 
 .jumbotron__carousel {
-  margin-top: 2rem;
+  margin-top: 6rem;
   /* width: 100vw; */
 }
 
@@ -123,6 +123,10 @@ body {
   padding: 0 1rem 3rem;
 }
 
+.section:last-of-type{
+  border-bottom: none;
+}
+
 .section__title {
   font-family: "Montserrat Subrayada", sans-serif;
   font-size: 1.75rem;
@@ -138,6 +142,7 @@ body {
 
 .section.section__hours-locations-contact {
   padding: 0 0 3rem;
+  margin-top: 4rem;
 }
 
 .section.section__hours-locations-contact section:not(:last-child) {
@@ -150,6 +155,7 @@ body {
 .section__locations,
 .section__contact {
   width: 100%;
+  /* padding */
 }
 
 .section__hours .section__content,
@@ -185,9 +191,14 @@ body {
   text-align: center;
 }
 
+.section__menu .section__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .section__menu .section__content a {
-  text-align: center;
-  display: block;
+  display: inline-block;
 }
 
 .section__menu .section__content .menu-icon {
@@ -210,12 +221,41 @@ body {
 }
 
 .form__text {
-  color: rgb(238, 93, 254);
+  color: rgb(52, 252, 175);
+  font-weight: bold;
 }
 
 .form__button {
   margin-top: 1rem;
   width: 100%;
+}
+
+.toast {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  font-size: 1rem;
+}
+
+.section__press ul {
+  font-size: 1.5rem;
+  font-family: "Glory", sans-serif;
+
+}
+
+.section__press ul li {
+  list-style-type: "📰";
+  padding-inline-start: 1rem;
+}
+
+.section__press ul li a {
+  text-decoration: none;
+  color: pink;
+  font-weight: 600;
+}
+
+.section__press ul li a:hover {
+  color: var(--text1);
 }
 
 .footer {
@@ -238,7 +278,7 @@ body {
 }
 
 .footer__div--text {
-  padding: 0 .25rem;
+  padding: 0 0.25rem;
   text-align: center;
 }
 
@@ -251,7 +291,7 @@ body {
 }
 
 .footer__div--text span:nth-child(3) {
-  font-family: 'Glory', sans-serif;
+  font-family: "Glory", sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
 }
@@ -262,7 +302,7 @@ body {
 
 .footer__div--socials {
   font-size: 1.5rem;
-  font-family: 'Glory', sans-serif;
+  font-family: "Glory", sans-serif;
 }
 
 .footer__div--socials span a {
@@ -322,7 +362,8 @@ body {
     font-size: 1.25rem;
   }
 
-  .footer__div--text, .footer__div--socials {
+  .footer__div--text,
+  .footer__div--socials {
     margin: auto 0;
   }
 }
@@ -369,9 +410,11 @@ body {
     font-size: 2rem;
   }
 
-  .section__join {
+  .section__join, .section__press {
     padding: 0 10vw 3rem;
   }
+
+
 }
 
 @media screen and (min-width: 992px) {
@@ -396,6 +439,7 @@ body {
     margin-bottom: 0;
     border-right: var(--border1);
     border-bottom: none;
+    padding: 0 0 0rem;
   }
 
   .handshake {

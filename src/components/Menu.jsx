@@ -8,7 +8,7 @@ function Menu() {
     <section id="menu" className="section section__menu">
       <h1 className="section__title">The Menu</h1>
       <div className="section__content">
-        <p>Click below for the full menu</p>
+        {/* <p>Click below for the full menu</p> */}
         <a download href="/src/assets/files/test.pdf">
           <FontAwesomeIcon
             className="font-awesome menu-icon"

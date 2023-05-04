@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
 import Jumbotron from "./components/Jumbotron";
-import About from "./components/About";
 import HoursLocationContact from "./components/HoursLocationContact";
 import Menu from "./components/Menu";
 import Join from "./components/Join";
-import Reservations from "./components/Reservations";
-import TakeOut from "./components/TakeOut";
 import Press from "./components/Press";
 import Footer from "./components/Footer";
 import { ViewportProvider } from "./utils/viewportContext";
-
+// import About from "./components/About";
+// import Reservations from "./components/Reservations";
+// import TakeOut from "./components/TakeOut";
+console.log(`App is running in mode ${import.meta.env.MODE}`);
 function App() {
   return (
     <div className="App">
@@ -19,11 +19,8 @@ function App() {
       <ViewportProvider>
         <Header />
         <Jumbotron />
-        <About />
         <HoursLocationContact />
         <Menu />
-        {/* <Reservations /> */}
-        {/* <TakeOut /> */}
         <Join />
         <Press />
         <Footer />

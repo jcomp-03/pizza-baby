@@ -12,6 +12,15 @@
   <style>
     @import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=Glory:wght@500&family=Gochi+Hand&family=Just+Me+Again+Down+Here&family=Mansalva&family=Mochiy+Pop+One&family=Montserrat+Subrayada:wght@700&family=Rum+Raisin&family=Russo+One&display=swap&family=Noto+Serif:wght@700");
   </style>
+  <!-- scripts related to emailjs -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+  </script>
+  <script type="module">
+    (function () {
+      emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    })();
+  </script>
+  
   <title>Pizza Baby</title>
 </head>
 

@@ -43,9 +43,9 @@ function Header() {
       </div>
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link className="nav__link" href="#about">
+          {/* <Nav.Link className="nav__link" href="#about">
             About
-          </Nav.Link>
+          </Nav.Link> */}
           <Nav.Link className="nav__link" href="#menu">
             Menu
           </Nav.Link>

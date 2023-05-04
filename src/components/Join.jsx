@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandshakeSimple } from "@fortawesome/free-solid-svg-icons";
+import { ToastSuccess, ToastFailure } from "./Toast";
 
 function Join() {
   // state for form inputs
@@ -11,7 +12,10 @@ function Join() {
     contactNumber: "",
     email: "",
     yearsOfExperience: "1",
+    role: "",
   });
+  const [isToastSuccessful, setIsToastSuccessful] = useState(false);
+  const [isToastFailure, setIsToastFailure] = useState(false);
 
   // determine if submit button is disabled or not
   const validate = () => {
@@ -23,21 +27,53 @@ function Join() {
       : true;
   };
 
+  const clearForm = () => {
+    setFormState({
+      fullName: "",
+      contactNumber: "",
+      email: "",
+      yearsOfExperience: "1",
+      role: "",
+    });
+  };
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
-
     setFormState({
       ...formState,
       [name]: value,
     });
-    console.log("formState is now", formState);
   };
 
   // create method to search for books and set state on form submit
   const handleFormSubmit = async (event) => {
+    setIsToastSuccessful(false);
+    setIsToastFailure(false);
     event.preventDefault();
     console.log("handleFormSubmit ran");
+    const { fullName, contactNumber, email, yearsOfExperience, role } =
+      formState;
+    try {
+      const templateParams = {
+        fullName,
+        contactNumber,
+        email,
+        yearsOfExperience,
+        role,
+      };
+      // send data now
+      const response = await emailjs.send(
+        "default_service",
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams
+      );
+      console.log("response is", response);
+      response.status == 200 ? setIsToastSuccessful(true) : setIsToastFailure(true);
+      clearForm();
+    } catch (error) {
+      console.log("Error occurred during form submission\n", error);
+      setIsToastFailure(true);
+    }
   };
 
   return (
@@ -54,6 +90,8 @@ function Join() {
           icon={faHandshakeSimple}
         />
         <Form className="form" onSubmit={handleFormSubmit}>
+          {isToastSuccessful && <ToastSuccess />}
+          {isToastFailure && <ToastFailure />}
           <Form.Group className="mb-3" controlId="formFullName">
             <Form.Label>Full name:</Form.Label>
             <Form.Control
@@ -69,8 +107,8 @@ function Join() {
             <Form.Label>Best contact number:</Form.Label>
             <Form.Control
               type="tel"
-              placeholder="i.e. 123-456-7890"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              placeholder="i.e. 1234567890"
+              pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
               value={formState.contactNumber}
               name="contactNumber"
               className="form__input"
@@ -93,7 +131,7 @@ function Join() {
             </Form.Text>
           </Form.Group>
 
-          <Form.Group className="form__group" controlId="formYearsExperience">
+          <Form.Group className="mb-3" controlId="formYearsExperience">
             <Form.Label>
               How many years of restaurant experience do you bring?
             </Form.Label>
@@ -119,6 +157,17 @@ function Join() {
             <Form.Text className="form__text">
               This answer helps to give us a baseline on your profile.
             </Form.Text>
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formRole">
+            <Form.Label>What role are you interested in?</Form.Label>
+            <Form.Control
+              placeholder=""
+              value={formState.role}
+              name="role"
+              className="form__input"
+              onChange={handleChange}
+            />
           </Form.Group>
 
           <Button
