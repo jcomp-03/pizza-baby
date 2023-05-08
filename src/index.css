@@ -40,16 +40,13 @@ body {
   color: inherit;
 }
 
-.span-social-media a svg {
-  /* padding: 0; */
-}
-
 .font-awesome {
   padding: 0 0.3em;
 }
 
 .navbar-expand-md a[class="navbar-brand"] {
   margin-left: 1rem;
+  padding: 0;
 }
 
 .nav__link {

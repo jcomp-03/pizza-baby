@@ -1,5 +1,5 @@
-import React, { useState, useCallback, useMemo } from "react";
-import { GoogleMap, useJsApiLoader, LoadScript } from "@react-google-maps/api";
+import React, { useState, useCallback } from "react";
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import { useViewport } from "../utils/viewportContext";
 
 // const locations = {
@@ -15,37 +15,51 @@ import { useViewport } from "../utils/viewportContext";
 //     }
 // }
 
-
 const center = {
-  lat: 35.23316222896782,
-  lng: -80.87316164625584,
+  lat: 0,
+  lng: 180
 };
+// const center = {
+//   lat: 35.23316222896782,
+//   lng: -80.87316164625584,
+// };
 
 function MapBox() {
   // grab viewport width and viewport height from custom useViewport hook;
   const { width, height } = useViewport();
-  
+
+  // set container width and height for the Google Map
   const containerStyle = {
     width: "100%",
-    height: 0.50 * height,
+    height: 0.5 * height,
   };
 
-  console.log('mapbox width, height', width, height);
+  //console.log('mapbox width, height', width, height);
 
-  const { isLoaded } = useJsApiLoader({
+  // uses js-api-loader package to load Google Maps JavaScript API
+  // will use isLoaded to render different JSX depending on its value
+  const { isLoaded, loadError } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: "AIzaSyAVhbu3Ox7jzTQr-BMxDnNGlWmsxUXsZoU",
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
   });
 
   const [map, setMap] = useState(null);
 
-  const onLoad = useCallback(function callback(map) {
-    // This is just an example of getting and using the map instance!!! don't just blindly copy!
-    const bounds = new window.google.maps.LatLngBounds(center);
-    map.fitBounds(bounds);
+  const onClick = (event) => {
+    console.log("Map click:", event);
+  };
 
-    setMap(map);
-  }, []);
+  // const onLoad = useCallback(function callback(map) {
+  //   // This is just an example of getting and using the map instance!!! don't just blindly copy!
+  //   // const bounds = new window.google.maps.LatLngBounds(center);
+  //   // map.fitBounds(bounds);
+  //   //console.log('Google Map loaded');
+  //   setMap(map);
+  // }, []);
+
+  const onLoad = (marker) => {
+    console.log("marker: ", marker);
+  };
 
   const onUnmount = useCallback(function callback(map) {
     setMap(null);
@@ -55,13 +69,32 @@ function MapBox() {
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
-      zoom={12}
-      onLoad={onLoad}
+      zoom={6}
+      // onLoad={onLoad}
+      onClick={onClick}
       onUnmount={onUnmount}
-    //   onCenterChanged={() => console.log('center changed')}
+      //   onCenterChanged={() => console.log('center changed')}
     >
       {/* Child components, such as markers, info windows, etc. */}
-      <></>
+      <Marker
+        onLoad={onLoad}
+        visible={true}
+        position={center}
+        icon={{
+          path: google.maps.SymbolPath.CIRCLE,
+          scale: 7,
+        }}
+      />
+
+      <Marker
+      label={"Here is your label!"}
+      opacity={1}
+      visible={true}
+        icon={
+          "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
+        }
+        position={center}
+      />
     </GoogleMap>
   ) : (
     <>

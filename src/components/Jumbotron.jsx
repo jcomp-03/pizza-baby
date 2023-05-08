@@ -35,36 +35,18 @@ function Jumbotron() {
         keyboard={false}
         fade
         variant="dark"
-        // nextIcon={nextIcon}
-        // prevIcon={prevIcon}
       >
         <Carousel.Item>
           <img className="d-block w-100" src={c1} alt="First slide" />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Hey guys, want to show these slide captions?</p>
-          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={c2} alt="Second slide" />
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>They're optional</p>
-          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={c3} alt="Third slide" />
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>Like just about everything else you see.</p>
-          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={c4} alt="Fourth slide" />
-          <Carousel.Caption>
-            <h3>Fourth slide label</h3>
-            <p>Let me know!</p>
-          </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
     </div>

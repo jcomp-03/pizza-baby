@@ -1,7 +1,9 @@
 logo_dark_transparent.ai
-/public/favicon_io_logo_dark_png
 /public/js/map.js
 .env
+node_modules
+
+
 # Logs
 logs
 *.log
@@ -11,7 +13,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
 #dist
 dist-ssr
 *.local
