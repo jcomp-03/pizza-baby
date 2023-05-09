@@ -64,7 +64,7 @@ function Join() {
       // send data now
       const response = await emailjs.send(
         "default_service",
-        import.meta.env.EMAILJS_TEMPLATE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         templateParams
       );
       console.log("response is", response);
