@@ -38,6 +38,7 @@ function MapBox() {
 
   // uses js-api-loader package to load Google Maps JavaScript API
   // will use isLoaded to render different JSX depending on its value
+  console.log(import.meta.test.VITE_TEST2);
   console.log('GOOGLE_MAPS_API_KEY:', import.meta.env.VITE_GOOGLE_MAPS_API_KEY);
   const { isLoaded, loadError } = useJsApiLoader({
     id: "google-map-script",
