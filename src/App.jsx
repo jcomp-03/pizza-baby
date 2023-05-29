@@ -10,8 +10,10 @@ import { ViewportProvider } from "./utils/viewportContext";
 // import About from "./components/About";
 // import Reservations from "./components/Reservations";
 // import TakeOut from "./components/TakeOut";
+
 console.log(`App is running in mode ${import.meta.env.MODE}`);
-console.log(import.meta.env.VITE_TEST1);
+
+
 function App() {
   return (
     <div className="App">
