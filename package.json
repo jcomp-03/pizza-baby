@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "backend": "nodemon --trace-warnings server.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
@@ -29,6 +30,7 @@
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-legacy": "^4.0.3",
     "@vitejs/plugin-react": "^3.1.0",
+    "nodemon": "^2.0.22",
     "vite": "^4.2.0"
   }
 }

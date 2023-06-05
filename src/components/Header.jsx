@@ -24,14 +24,7 @@ function Header() {
       </Navbar.Brand>
       <div className="socials-hamburger-container">
         <span className="span-social-media">
-          <a href="https://www.google.com" target={"_blank"}>
-            <FontAwesomeIcon
-              className="font-awesome"
-              icon={faPhone}
-              fixedWidth
-            />
-          </a>
-          <a href={isMobile ? "instagram://user?username=jlcomp03" : "https://instagram.com/jlcomp03"} target={"_blank"}>
+          <a href={isMobile ? "instagram://user?username=pizzababyclt" : "https://instagram.com/pizzababyclt"} target={"_blank"}>
             <FontAwesomeIcon
               className="font-awesome"
               icon={faInstagramSquare}

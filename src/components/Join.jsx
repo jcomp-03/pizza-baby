@@ -47,13 +47,22 @@ function Join() {
 
   // create method to search for books and set state on form submit
   const handleFormSubmit = async (event) => {
+    event.preventDefault();
     setIsToastSuccessful(false);
     setIsToastFailure(false);
-    event.preventDefault();
+    
     console.log("handleFormSubmit ran");
+
     const { fullName, contactNumber, email, yearsOfExperience, role } =
       formState;
     try {
+      // fetch template id; not entirely necessary
+      const templateIdRes = await fetch("/api/emailjs_template_id");
+      if(!templateIdRes.ok) {
+        throw new Error('Http fetch to /api/emailjs_template_id unsuccessfull');
+      }
+      const { templateId } = await templateIdRes.json();
+
       const templateParams = {
         fullName,
         contactNumber,
@@ -61,10 +70,11 @@ function Join() {
         yearsOfExperience,
         role,
       };
+
       // send data now
       const response = await emailjs.send(
         "default_service",
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateId,
         templateParams
       );
       console.log("response is", response);
