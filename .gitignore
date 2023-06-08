@@ -2,7 +2,6 @@ logo_dark_transparent.ai
 /public/js/map.js
 .env*
 node_modules
-local.settings.json
 nodemon.json
 
 # Logs
